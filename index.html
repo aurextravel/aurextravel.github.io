@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUREX Travel — Premium Concierge & Travel Services | Georgia</title>
+    <meta name="description" content="AUREX Travel — Your premium gateway to Georgia. Luxury concierge, curated tours, visa assistance, and bespoke travel experiences from India to Georgia.">
+    <meta property="og:title" content="AUREX Travel — Premium Concierge Services">
+    <meta property="og:description" content="Your gateway to Georgia. Luxury travel, concierge services, and unforgettable experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aurextravel.co">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #D4B96A;
+            --dark: #0A0A0A;
+            --dark-card: #111111;
+            --dark-subtle: #1A1A1A;
+            --text: #E8E8E8;
+            --text-muted: #999999;
+            --white: #FFFFFF;
+            --accent: #FF6B35;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ═══ NAVBAR ═══ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.2rem 2rem;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+            padding: 0.8rem 2rem;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-size: 0.9rem;
+            vertical-align: super;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 0.6rem 1.5rem;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(165deg, #0A0A0A 0%, #0D1117 40%, #0A0A0A 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.03) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(255, 107, 53, 0.02) 0%, transparent 50%);
+            animation: heroGlow 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(3deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-tag {
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 550px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 1rem 2.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 168, 76, 0.25);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: transparent;
+            color: var(--gold);
+            padding: 1rem 2.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            background: rgba(201, 168, 76, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-8px); }
+            60% { transform: translateX(-50%) translateY(-4px); }
+        }
+
+        /* ═══ SECTIONS ═══ */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .section-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+
+        /* ═══ ABOUT ═══ */
+        .about {
+            background: var(--dark);
+            border-top: 1px solid rgba(201, 168, 76, 0.08);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-stat {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .stat-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .stat-item p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-image {
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--dark-subtle) 0%, var(--dark-card) 100%);
+            border: 1px solid rgba(201, 168, 76, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold));
+        }
+
+        /* ═══ SERVICES ═══ */
+        .services {
+            background: var(--dark-subtle);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 2.5rem 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .service-card:hover {
+            border-color: rgba(201, 168, 76, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+            color: var(--white);
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ═══ DESTINATIONS ═══ */
+        .destinations {
+            background: var(--dark);
+            border-top: 1px solid rgba(201, 168, 76, 0.08);
+        }
+
+        .dest-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+        }
+
+        .dest-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .dest-card:hover {
+            border-color: rgba(201, 168, 76, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .dest-card .dest-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .dest-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .dest-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* ═══ WHY GEORGIA ═══ */
+        .why-georgia {
+            background: var(--dark-subtle);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 1.2rem;
+            padding: 1.5rem;
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: border-color 0.3s;
+        }
+
+        .why-item:hover {
+            border-color: rgba(201, 168, 76, 0.12);
+        }
+
+        .why-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            width: 2.5rem;
+            text-align: center;
+        }
+
+        .why-item h4 {
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        .why-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* ═══ CTA ═══ */
+        .cta {
+            background: linear-gradient(165deg, #0D1117 0%, #0A0A0A 100%);
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: var(--white);
+            padding: 1rem 2.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .whatsapp-btn:hover {
+            background: #22c55e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        /* ═══ FOOTER ═══ */
+        footer {
+            background: var(--dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-copy {
+            width: 100%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* ═══ WHATSAPP FLOAT ═══ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        /* ═══ ANIMATIONS ═══ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-cta { display: none; }
+            .mobile-toggle { display: block; }
+
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dest-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stat {
+                gap: 1.5rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo">AUREX<span>🔥</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#why">Why Georgia</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://wa.me/995598708122?text=Hi%20AUREX!%20I%27m%20interested%20in%20your%20travel%20services." class="nav-cta">Get In Touch</a>
+            <button class="mobile-toggle" onclick="toggleNav()">☰</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">Premium Concierge & Travel Services</p>
+            <h1>Your Gateway to <em>Georgia</em></h1>
+            <p>Curated luxury travel experiences from India to the heart of the Caucasus. One message away from your next unforgettable journey.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/995598708122?text=Hi%20AUREX!%20I%27d%20like%20to%20plan%20a%20trip%20to%20Georgia." class="btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.317 0-4.46-.756-6.194-2.034l-.432-.326-2.643.886.886-2.643-.326-.432A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                    WhatsApp Us
+                </a>
+                <a href="#services" class="btn-outline">Our Services</a>
+            </div>
+        </div>
+        <a href="#about" class="hero-scroll">Scroll to explore ↓</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="fade-in">
+                    <p class="section-tag">About AUREX</p>
+                    <h2 class="section-title">Bridging Cultures,<br>Creating Experiences</h2>
+                    <p class="section-desc">AUREX Travel is a premium concierge and travel company based in Georgia, specializing in bespoke travel experiences for Indian travelers. We handle everything — from visa assistance to luxury wine tours — so you can focus on making memories.</p>
+                    <p style="color: var(--text-muted); font-weight: 300; font-size: 0.95rem; margin-bottom: 1rem;">With deep local knowledge and a passion for hospitality, we craft journeys that go beyond tourism. Every trip is personal. Every detail is handled.</p>
+                    <div class="about-stat">
+                        <div class="stat-item">
+                            <h3>🇬🇪</h3>
+                            <p>Based in<br>Georgia</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>🇮🇳</h3>
+                            <p>Serving<br>India</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>🇦🇪</h3>
+                            <p>Connected<br>to UAE</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>Concierge<br>Support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image fade-in">
+                    🏔️
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-inner">
+            <p class="section-tag">What We Do</p>
+            <h2 class="section-title">Premium Services</h2>
+            <p class="section-desc">End-to-end travel solutions designed for discerning travelers.</p>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">✈️</div>
+                    <h3>Trip Planning</h3>
+                    <p>Fully customized itineraries tailored to your preferences, budget, and travel style. From weekend getaways to extended explorations.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🛂</div>
+                    <h3>Visa Assistance</h3>
+                    <p>Complete documentation support for Georgian e-Visa applications. We guide you through every step of the process.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏨</div>
+                    <h3>Luxury Accommodation</h3>
+                    <p>Handpicked hotels, boutique stays, and premium holiday homes across Tbilisi, Batumi, Kazbegi, and beyond.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🍷</div>
+                    <h3>Wine & Cultural Tours</h3>
+                    <p>Discover the birthplace of wine. Private vineyard tours, traditional feasts, and immersive cultural experiences in Kakheti.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🚐</div>
+                    <h3>Transfers & Transport</h3>
+                    <p>Airport pickups, private drivers, and comfortable inter-city transfers. Travel in style, arrive relaxed.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎯</div>
+                    <h3>Concierge & VIP</h3>
+                    <p>Restaurant reservations, event tickets, special occasions, and anything else you need. One message, zero stress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section class="destinations" id="destinations">
+        <div class="section-inner">
+            <p class="section-tag">Explore</p>
+            <h2 class="section-title">Destinations We Cover</h2>
+            <p class="section-desc">From ancient cities to mountain peaks — Georgia has it all.</p>
+            <div class="dest-grid">
+                <div class="dest-card fade-in">
+                    <div class="dest-emoji">🏛️</div>
+                    <h3>Tbilisi</h3>
+                    <p>Capital city. History, nightlife, sulfur baths & incredible food.</p>
+                </div>
+                <div class="dest-card fade-in">
+                    <div class="dest-emoji">🏖️</div>
+                    <h3>Batumi</h3>
+                    <p>Black Sea coast. Beaches, botanical gardens & modern architecture.</p>
+                </div>
+                <div class="dest-card fade-in">
+                    <div class="dest-emoji">⛰️</div>
+                    <h3>Kazbegi</h3>
+                    <p>Mountain paradise. Gergeti Trinity Church & Caucasus peaks.</p>
+                </div>
+                <div class="dest-card fade-in">
+                    <div class="dest-emoji">🍇</div>
+                    <h3>Kakheti</h3>
+                    <p>Wine region. 8,000-year winemaking tradition & vineyard tours.</p>
+                </div>
+                <div class="dest-card fade-in">
+                    <div class="dest-emoji">🎿</div>
+                    <h3>Gudauri</h3>
+                    <p>Ski resort. World-class slopes & year-round mountain adventures.</p>
+                </div>
+                <div class="dest-card fade-in">
+                    <div class="dest-emoji">🏔️</div>
+                    <h3>Svaneti</h3>
+                    <p>UNESCO heritage. Medieval towers & untouched alpine beauty.</p>
+                </div>
+                <div class="dest-card fade-in">
+                    <div class="dest-emoji">🏰</div>
+                    <h3>Mtskheta</h3>
+                    <p>Ancient capital. UNESCO churches & spiritual heart of Georgia.</p>
+                </div>
+                <div class="dest-card fade-in">
+                    <div class="dest-emoji">🌊</div>
+                    <h3>Kutaisi</h3>
+                    <p>Cultural gem. Caves, canyons & Bagrati Cathedral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY GEORGIA -->
+    <section class="why-georgia" id="why">
+        <div class="section-inner">
+            <p class="section-tag">Why Georgia</p>
+            <h2 class="section-title">The Perfect Destination</h2>
+            <p class="section-desc">Here's why Georgia is the hottest travel destination for 2026.</p>
+            <div class="why-grid">
+                <div class="why-item fade-in">
+                    <div class="why-icon">🍷</div>
+                    <div>
+                        <h4>World's Oldest Wine Country</h4>
+                        <p>8,000 years of winemaking tradition. Georgian wine is a UNESCO Intangible Cultural Heritage.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">💰</div>
+                    <div>
+                        <h4>Incredible Value</h4>
+                        <p>Luxury experiences at a fraction of European prices. Your money goes much further here.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">🏔️</div>
+                    <div>
+                        <h4>Stunning Landscapes</h4>
+                        <p>From the Caucasus mountains to the Black Sea coast — breathtaking scenery everywhere you look.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">🛂</div>
+                    <div>
+                        <h4>Easy Visa Process</h4>
+                        <p>Simple e-Visa for Indian nationals. We handle the paperwork for you.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">🍽️</div>
+                    <div>
+                        <h4>Mind-Blowing Food</h4>
+                        <p>Khachapuri, khinkali, and a culinary scene that rivals any food capital in the world.</p>
+                    </div>
+                </div>
+                <div class="why-item fade-in">
+                    <div class="why-icon">✈️</div>
+                    <div>
+                        <h4>Just 4-5 Hours Away</h4>
+                        <p>Quick flights from India with convenient connections. Closer than you think.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="fade-in">
+            <p class="section-tag">Ready?</p>
+            <h2>Start Your Georgia Journey</h2>
+            <p>Send us a message and we'll craft the perfect trip for you. No commitments, just a conversation.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/995598708122?text=Hi%20AUREX!%20I%27m%20interested%20in%20planning%20a%20trip%20to%20Georgia." class="whatsapp-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.317 0-4.46-.756-6.194-2.034l-.432-.326-2.643.886.886-2.643-.326-.432A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                    Chat on WhatsApp
+                </a>
+                <a href="mailto:info@aurextravel.co" class="btn-outline">Email Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">AUREX</div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 AUREX Concierge Services. All rights reserved. | Tbilisi, Georgia
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/995598708122?text=Hi%20AUREX!%20I%27m%20interested%20in%20your%20travel%20services." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.317 0-4.46-.756-6.194-2.034l-.432-.326-2.643.886.886-2.643-.326-.432A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    </a>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile nav toggle
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
